@@ -31,7 +31,6 @@
     <string name="calculator_title">Tip Calculator</string>
 
     <string name="bill_amount_label">Bill Amount</string>
-    <string name="bill_amount"></string>
 
     <string name="tip_percent_label">Percent</string>
     <string name="tip_percent">15%</string>
@@ -51,4 +50,14 @@
     <string name="password">Password</string>
     <string name="login_title">LOGIN</string>
     <string name="create_new_account">Create new account</string>
+
+    <string name="jor_name">Jordan Godau (A00954606)</string>
+    <string name="ton_name">Toni Trinh (A01241898)</string>
+
+    <string name="month_year_button_label">Cases by month and year</string>
+    <string name="health_button_label">cases by health authority</string>
+    <string name="gender_button_label">cases by gender</string>
+    <string name="age_button_label">cases by age group</string>
+
+
 </resources>
