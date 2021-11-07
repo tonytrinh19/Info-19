@@ -70,7 +70,7 @@ public class LoginActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
                             Toast.makeText(LoginActivity.this, "Login successful!", Toast.LENGTH_LONG).show();
-                            startActivity(new Intent(getApplicationContext(), MainLoginActivity.class));
+                            startActivity(new Intent(getApplicationContext(), HomePageActivity.class));
                         } else {
                             Toast.makeText(LoginActivity.this, "ERROR: " + task.getException().getMessage(), Toast.LENGTH_LONG).show();
                             progressBar.setVisibility(View.GONE);

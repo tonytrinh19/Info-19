@@ -67,7 +67,7 @@ public class RegisterActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
                             Toast.makeText(RegisterActivity.this, "User Created", Toast.LENGTH_LONG).show();
-                            startActivity(new Intent(getApplicationContext(), MainLoginActivity.class));
+                            startActivity(new Intent(getApplicationContext(), HomePageActivity.class));
                         } else {
                             Toast.makeText(RegisterActivity.this, "ERROR: " + task.getException().getMessage(), Toast.LENGTH_LONG).show();
                             progressBar.setVisibility(View.GONE);
