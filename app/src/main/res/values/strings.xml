@@ -68,4 +68,11 @@
     <string name="to79">        70–79:%1$s</string>
     <string name="to89">        80–89:%1$s</string>
     <string name="plus90">      90+%1$s</string>
+
+    <string name="Fraser">      Fraser%1$s</string>
+    <string name="Interior">    Interior:%1$s</string>
+    <string name="Northern">    Northern:%1$s</string>
+    <string name="Canada">      Out of Canada:%1$s</string>
+    <string name="Vancouver">   Vancouver:%1$s</string>
+    <string name="Coastal">     Coastal:%1$s</string>
 </resources>
