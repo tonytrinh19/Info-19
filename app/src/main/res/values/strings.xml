@@ -31,7 +31,6 @@
     <string name="calculator_title">Tip Calculator</string>
 
     <string name="bill_amount_label">Bill Amount</string>
-    <string name="bill_amount"></string>
 
     <string name="tip_percent_label">Percent</string>
     <string name="tip_percent">15%</string>
@@ -51,13 +50,22 @@
     <string name="password">Password</string>
     <string name="login_title">LOGIN</string>
     <string name="create_new_account">Create new account</string>
-    <string name="title_activity_cases_gender">CasesGender</string>
-    <!-- Strings used for fragments for navigation -->
-    <string name="first_fragment_label">First Fragment</string>
-    <string name="second_fragment_label">Second Fragment</string>
-    <string name="next">Next</string>
-    <string name="previous">Previous</string>
+    <string name="jor_name">Jordan Godau (A00954606)</string>
+    <string name="ton_name">Toni Trinh (A01241898)</string>
+    <string name="bill_amount">Bill Amount</string>
+    <string name="month_year_button_label">Cases by month and year</string>
+    <string name="health_button_label">cases by health authority</string>
+    <string name="gender_button_label">cases by gender</string>
+    <string name="age_button_label">cases by age group</string>
 
-    <string name="hello_first_fragment">Hello first fragment</string>
-    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="lessThan10">  &lt;10:%1$s</string>
+    <string name="to19">        10–19:%1$s</string>
+    <string name="to29">        20–29:%1$s</string>
+    <string name="to39">        30–39:%1$s</string>
+    <string name="to49">        40–49:%1$s</string>
+    <string name="to59">        50–59:%1$s</string>
+    <string name="to69">        60–69:%1$s</string>
+    <string name="to79">        70–79:%1$s</string>
+    <string name="to89">        80–89:%1$s</string>
+    <string name="plus90">      90+%1$s</string>
 </resources>

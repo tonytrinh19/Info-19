@@ -10,14 +10,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Assignment2">
         <activity
-            android:name=".CasesHealthAuthority"
-            android:exported="true" />
-        <activity
-            android:name=".CasesMonthYear"
-            android:exported="true" />
-        <activity
-            android:name=".CasesAgeGroup"
-            android:exported="true" />
+            android:name=".HomePageActivity"
+            android:exported="false" />
         <activity
             android:name=".LoginActivity"
             android:exported="true">
@@ -29,6 +23,7 @@
         </activity>
         <activity android:name=".MainLoginActivity" />
         <activity android:name=".RegisterActivity" />
+        <activity android:name=".MainActivity" />
     </application>
 
 </manifest>

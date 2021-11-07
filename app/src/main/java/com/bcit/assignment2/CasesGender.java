@@ -6,13 +6,18 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
 public class CasesGender extends AppCompatActivity {
 
-    ArrayList<String> genderCases;
-    ListView lv;
+    String genderMaleCases;
+    String genderFemaleCases;
+    String genderUnknownCases;
+    TextView genderMale;
+    TextView genderFemale;
+    TextView genderUnknown;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,14 +25,14 @@ public class CasesGender extends AppCompatActivity {
         setContentView(R.layout.activity_cases_gender);
 
         Intent intent = getIntent();
-        genderCases = intent.getStringArrayListExtra("db_result");
-        lv = findViewById(R.id.gender_list);
-        ArrayAdapter<String> ad = new ArrayAdapter<>(
-                this,
-                R.layout.support_simple_spinner_dropdown_item,
-                genderCases
-        );
-        lv.setAdapter(ad);
-
+        genderMaleCases = intent.getStringExtra("male");
+        genderFemaleCases = intent.getStringExtra("female");
+        genderUnknownCases = intent.getStringExtra("unknown");
+        genderMale = findViewById(R.id.femaleGender);
+        genderFemale = findViewById(R.id.maleGender);
+        genderUnknown = findViewById(R.id.unknownGender);
+        genderMale.setText(genderMaleCases);
+        genderFemale.setText(genderFemaleCases);
+        genderUnknown.setText(genderUnknownCases);
     }
 }
