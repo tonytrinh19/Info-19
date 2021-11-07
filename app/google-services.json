@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "732940621390",
+    "project_id": "comp3717-assignment-2-covid",
+    "storage_bucket": "comp3717-assignment-2-covid.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:732940621390:android:1986e8516d4cdf826f551f",
+        "android_client_info": {
+          "package_name": "com.bcit.assignment2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "732940621390-5kfc26prtu9jqs28ees43u9jcfvm600t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBogW4GGjx3Gzq7U1AVL7gE992OG8JEx-8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "732940621390-5kfc26prtu9jqs28ees43u9jcfvm600t.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
