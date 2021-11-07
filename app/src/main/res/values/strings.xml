@@ -58,6 +58,7 @@
     <string name="health_button_label">cases by health authority</string>
     <string name="gender_button_label">cases by gender</string>
     <string name="age_button_label">cases by age group</string>
+    <string name="bill_amount" />
 
 
 </resources>
