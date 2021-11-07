@@ -58,24 +58,12 @@
     <string name="gender_button_label">cases by gender</string>
     <string name="age_button_label">cases by age group</string>
 
-    <string name="lessThan10">  &lt;10:%1$s</string>
-    <string name="to19">        10–19:%1$s</string>
-    <string name="to29">        20–29:%1$s</string>
-    <string name="to39">        30–39:%1$s</string>
-    <string name="to49">        40–49:%1$s</string>
-    <string name="to59">        50–59:%1$s</string>
-    <string name="to69">        60–69:%1$s</string>
-    <string name="to79">        70–79:%1$s</string>
-    <string name="to89">        80–89:%1$s</string>
-    <string name="plus90">      90+%1$s</string>
+    <string name="unknown">   unknown: %1$s</string>
 
-    <string name="Fraser">      Fraser%1$s</string>
-    <string name="Interior">    Interior:%1$s</string>
-    <string name="Northern">    Northern:%1$s</string>
-    <string name="Canada">      Out of Canada:%1$s</string>
-    <string name="Vancouver">   Vancouver:%1$s</string>
-    <string name="Coastal">     Coastal:%1$s</string>
-    <string name="month">month</string>
-    <string name="year">year</string>
-    <string name="find">Find</string>
+    <string name="month">   month</string>
+    <string name="year">    year</string>
+    <string name="find">    Find</string>
+
+    <string name="male">      Fraser: %1$s</string>
+    <string name="female">    Interior: %1$s</string>
 </resources>

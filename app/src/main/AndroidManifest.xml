@@ -27,6 +27,9 @@
         <activity android:name=".RegisterActivity" />
         <activity android:name=".MainActivity" />
         <activity android:name=".CasesMonthYear"/>
+        <activity android:name=".CasesGender"/>
+        <activity android:name=".CasesHealthAuthority"/>
+        <activity android:name=".CasesAgeGroup"/>
     </application>
 
 </manifest>

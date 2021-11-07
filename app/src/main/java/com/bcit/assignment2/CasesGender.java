@@ -25,12 +25,15 @@ public class CasesGender extends AppCompatActivity {
         setContentView(R.layout.activity_cases_gender);
 
         Intent intent = getIntent();
+
         genderMaleCases = intent.getStringExtra("male");
         genderFemaleCases = intent.getStringExtra("female");
         genderUnknownCases = intent.getStringExtra("unknown");
+
         genderMale = findViewById(R.id.femaleGender);
         genderFemale = findViewById(R.id.maleGender);
         genderUnknown = findViewById(R.id.unknownGender);
+
         genderMale.setText(genderMaleCases);
         genderFemale.setText(genderFemaleCases);
         genderUnknown.setText(genderUnknownCases);

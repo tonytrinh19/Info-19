@@ -29,30 +29,30 @@ public class CasesHealthAuthority extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_cases_gender);
+        setContentView(R.layout.activity_cases_health_authority);
 
         Intent intent = getIntent();
 
-        Fraser = intent.getStringExtra("lessThan10");
-        Interior = intent.getStringExtra("to19");
-        Northern = intent.getStringExtra("to29");
-        Canada = intent.getStringExtra("to39");
-        Vancouver = intent.getStringExtra("to49");
-        Coastal = intent.getStringExtra("to59");
+        Fraser =    intent.getStringExtra(     "Fraser");
+        Interior =  intent.getStringExtra(   "Interior");
+        Northern =  intent.getStringExtra(   "Northern");
+        Canada =    intent.getStringExtra(     "Canada");
+        Vancouver = intent.getStringExtra(  "Vancouver");
+        Coastal =   intent.getStringExtra(    "Coastal");
 
-        fraserCases = findViewById(R.id.to19);
-        interiorCases = findViewById(R.id.to29);
-        northernCases = findViewById(R.id.to39);
-        canadaCases = findViewById(R.id.to49);
-        vancouverCases = findViewById(R.id.to59);
-        coastalCases = findViewById(R.id.to69);
+        fraserCases = findViewById(R.id     .Fraser);
+        interiorCases = findViewById(R.id   .Interior);
+        northernCases = findViewById(R.id   .Northern);
+        canadaCases = findViewById(R.id     .Canada);
+        vancouverCases = findViewById(R.id  .Vancouver);
+        coastalCases = findViewById(R.id    .Coastal);
 
-        fraserCases.setText(getString(R.string   .Fraser,   fraserCases));
-        interiorCases.setText(getString(R.string .Interior, interiorCases));
-        northernCases.setText(getString(R.string .Northern, northernCases));
-        canadaCases.setText(getString(R.string   .Canada,   canadaCases));
-        vancouverCases.setText(getString(R.string.Vancouver,vancouverCases));
-        coastalCases.setText(getString(R.string      .Coastal,  coastalCases));
+        fraserCases.setText(Fraser);
+        interiorCases.setText(Interior);
+        northernCases.setText(Northern);
+        canadaCases.setText(Canada);
+        vancouverCases.setText(Vancouver);
+        coastalCases.setText(Coastal);
 
 
     }
