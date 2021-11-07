@@ -5,7 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
+import android.widget.ProgressBar;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -16,64 +18,36 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.Objects;
 
 public class HomePageActivity extends AppCompatActivity {
+
+    ProgressBar pb;
+    Button monthYear, healthAuthority, gender, ageGroup;
+
     // 93193
-    static int maleCount = 0;
-    // 88479
-    static int femaleCount = 0;
-    // 244
-    static int unknown = 0;
+    static int maleCount = 0, femaleCount = 0, unknown = 0;
 
     // 14924
-    static int ageLessThan10Count;
-    // 0
-    static int age10To19Count;
-    // 44653
-    static int age20To29Count;
-    // 38471
-    static int age30To39Count;
-    // 29573
-    static int age40To49Count;
-    // 24180
-    static int age50To59Count;
-    // 15801
-    static int age60To69Count;
-    // 8102
-    static int age70To79Count;
-    // 4290
-    static int age80To89Count;
-    // 1890
-    static int ageMoreThan90;
-    // 32 ???
-    static int ageElse;
+    static int ageLessThan10Count, age10To19Count,
+    age20To29Count, age30To39Count, age40To49Count,
+    age50To59Count, age60To69Count, age70To79Count,
+    age80To89Count, ageMoreThan90, ageElse;
 
-    // Fraser 92184
-    static int countFraserHA;
-    // Interior 26824
-    static int countInteriorHA;
-    // Northern 13397
-    static int countNorthernHA;
-    // Vancouver Coastal 39869
-    static int countVancouverCoastalHA;
-    // Vancouver Island 9348
-    static int countVancouverIslandHA;
-    // else ? 294
-    static int countOutsideCa;
+    static int countFraserHA, countInteriorHA, countNorthernHA,
+    countVancouverCoastalHA, countVancouverIslandHA, countOutsideCa;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         Query q = FirebaseDatabase.getInstance().getReference();
         q.addListenerForSingleValueEvent(valueEventListener);
-        // Load the buttons and contents after finish querying
-        // Add a progress bar here
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_page);
 
+        pb = findViewById(R.id.progress_bar);
 
+        monthYear = findViewById(R.id.mon_year_but);
+        healthAuthority = findViewById(R.id.health_auth_button);
+        gender = findViewById(R.id.gender_button);
+        ageGroup = findViewById(R.id.age_group_button);
 
-        Button monthYear = findViewById(R.id.mon_year_but);
-        Button healthAuthority = findViewById(R.id.health_auth_button);
-        Button gender = findViewById(R.id.gender_button);
-        Button ageGroup = findViewById(R.id.age_group_button);
 
         monthYear.setOnClickListener(myv -> {
             Intent timeIntent = new Intent(this, CasesMonthYear.class);
@@ -88,7 +62,6 @@ public class HomePageActivity extends AppCompatActivity {
             healthAuthIntent.putExtra(   "Canada", "Canada:\t" +   countOutsideCa         );
             healthAuthIntent.putExtra("Vancouver", "Vancouver:\t" + countVancouverCoastalHA);
             healthAuthIntent.putExtra(  "Coastal", "Coastal:\t" + countVancouverIslandHA );
-
             startActivity(healthAuthIntent);
         });
 
@@ -115,10 +88,6 @@ public class HomePageActivity extends AppCompatActivity {
             ageIntent.putExtra("unknown"    ,   "unknown:\t" + ageElse);
             startActivity(ageIntent);
         });
-
-
-
-
     }
 
     ValueEventListener valueEventListener = new ValueEventListener() {
@@ -130,36 +99,18 @@ public class HomePageActivity extends AppCompatActivity {
                     countAgeGroup(snapshot.child("Age_Group").getValue(String.class));
                     countHA(snapshot.child("HA").getValue(String.class));
                 }
-                // After query
-                System.out.println("MALE COUNT:" + maleCount);
-                System.out.println("FEMALE COUNT:" + femaleCount);
-                System.out.println("UNKNOWN COUNT:" + unknown);
 
-                System.out.println("AGE <10:" +   ageLessThan10Count);
-                System.out.println("AGE age10To19Count:" + age10To19Count);
-                System.out.println("AGE age20To29Count:" + age20To29Count);
-                System.out.println("AGE age30To39Count:" + age30To39Count);
-                System.out.println("AGE age40To49Count:" + age40To49Count);
-                System.out.println("AGE age50To59Count:" + age50To59Count);
-                System.out.println("AGE age60To69Count:" + age60To69Count);
-                System.out.println("AGE age70To79Count:" + age70To79Count);
-                System.out.println("AGE age80To89Count:" + age80To89Count);
-                System.out.println("AGE ageMoreThan90:" + ageMoreThan90);
-                System.out.println("AGE ageElse:" + ageElse);
+                monthYear.setVisibility(View.VISIBLE);
+                healthAuthority .setVisibility(View.VISIBLE);
+                gender.setVisibility(View.VISIBLE);
+                ageGroup.setVisibility(View.VISIBLE);
 
-                System.out.println("HA countFraserHA: " + countFraserHA);
-                System.out.println("HA countInteriorHA: " + countInteriorHA);
-                System.out.println("HA countNorthernHA: " + countNorthernHA);
-                System.out.println("HA countVancouverCoastalHA: " + countVancouverCoastalHA);
-                System.out.println("HA countVancouverIslandHA: " + countVancouverIslandHA);
-                System.out.println("HA outsideCanada: " + countOutsideCa);
+                pb.setVisibility(View.GONE);
             }
         }
 
         @Override
-        public void onCancelled(@NonNull DatabaseError error) {
-
-        }
+        public void onCancelled(@NonNull DatabaseError error) {}
     };
 
     private void countGender(String genderValue) {
