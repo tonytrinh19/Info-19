@@ -1,3 +1,54 @@
 <resources>
     <string name="app_name">assignment2</string>
+    <string name="hintFirstName">First Name</string>
+
+    <string name="hintLastName">Last Name</string>
+
+    <string name="btnAddStudent">Add Student</string>
+
+    <string name="enterNewName">Enter New Name</string>
+
+    <string name="btnUpdate">Update</string>
+
+    <string name="btnDelete">Delete</string>
+
+
+    <string-array name="schools">
+
+        <item>Business</item>
+
+        <item>Computing</item>
+
+        <item>Energy</item>
+
+        <item>Mining</item>
+
+        <item>Nursing</item>
+
+    </string-array>
+    <string name="auth_app_name">Firebase authentication demo</string>
+
+    <string name="calculator_title">Tip Calculator</string>
+
+    <string name="bill_amount_label">Bill Amount</string>
+    <string name="bill_amount"></string>
+
+    <string name="tip_percent_label">Percent</string>
+    <string name="tip_percent">15%</string>
+    <string name="increase">+</string>
+    <string name="decrease">-</string>
+
+    <string name="tip_amount_label">Tip</string>
+    <string name="tip_amount">$0.00</string>
+
+    <string name="total_amount_label">Total</string>
+    <string name="total_amount">$0.00</string>
+
+    <string name="login">Login</string>
+    <string name="register">Register</string>
+    <string name="logout">Logout</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="login_title">LOGIN</string>
+    <string name="create_new_account">Create new account</string>
 </resources>
