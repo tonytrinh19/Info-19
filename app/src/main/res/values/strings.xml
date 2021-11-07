@@ -75,4 +75,7 @@
     <string name="Canada">      Out of Canada:%1$s</string>
     <string name="Vancouver">   Vancouver:%1$s</string>
     <string name="Coastal">     Coastal:%1$s</string>
+    <string name="month">month</string>
+    <string name="year">year</string>
+    <string name="find">Find</string>
 </resources>

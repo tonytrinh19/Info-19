@@ -6,16 +6,16 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.widget.Button;
+import android.widget.TextView;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Objects;
 
@@ -25,17 +25,24 @@ public class CasesMonthYear extends AppCompatActivity {
     RecyclerView rv;
     List<Patient> patientList;
 
-    int maleCount = 0;
-    int femaleCount = 0;
-    int unknown = 0;
-
-    DatabaseReference dbArtists;
+    String year;
+    String month;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cases_month_year);
 
+        Button findButton = findViewById(R.id.searchYearMonth);
+        findButton.setOnClickListener(v -> {
+            TextView monthView = findViewById(R.id.monthSearch);
+            TextView yearView = findViewById(R.id.yearSearch);
+            year = yearView.getText().toString();
+            month = monthView.getText().toString();
+
+            Query q = FirebaseDatabase.getInstance().getReference().limitToFirst(10000);
+            q.addListenerForSingleValueEvent(valueEventListener);
+        });
 
         rv = findViewById(R.id.recyclerView);
         rv.setHasFixedSize(true);
@@ -44,10 +51,7 @@ public class CasesMonthYear extends AppCompatActivity {
         adapter = new PatientAdapter(this, patientList);
         rv.setAdapter(adapter);
 
-        // 150k max ?
-        Query q = FirebaseDatabase.getInstance().getReference();
 
-        q.addListenerForSingleValueEvent(valueEventListener);
     }
 
     ValueEventListener valueEventListener = new ValueEventListener() {
@@ -57,28 +61,33 @@ public class CasesMonthYear extends AppCompatActivity {
             if (dataSnapshot.exists()) {
                 for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
 
-                    if (Objects.equals(snapshot.child("Sex").getValue(String.class), "M")) {
-                        maleCount++;
-                    } else if (Objects.equals(snapshot.child("Sex").getValue(String.class), "F")) {
-                        femaleCount++;
-                    } else {
-                        unknown++;
-                    }
+                    if (
+                        // is year
+                        Objects.equals(Objects.requireNonNull(snapshot
+                            .child("Reported_Date").getValue(String.class))
+                            .split("-")[0], year)
+                    &&
+                        // is month
+                        Objects.equals(Objects.requireNonNull(snapshot
+                                .child("Reported_Date").getValue(String.class))
+                                .split("-")[1], month)
 
-//                    snapshot.child("Age_Group").toString();
-//                    snapshot.child("Classification_Reported").toString();
-//                    snapshot.child("HA").toString();
-//                    snapshot.child("Reported_Date").toString();
-//                    snapshot.child("Sex").toString();
-//                    patientList.add(p);
+                    ) {
+                        patientList.add(new Patient(
+                                snapshot.child("Age_Group").getValue(String.class),
+                                snapshot.child("Classification_Reported").getValue(String.class),
+                                snapshot.child("HA").getValue(String.class),
+                                snapshot.child("Reported_Date").getValue(String.class),
+                                snapshot.child("Sex").getValue(String.class)
+                            )
+                        );
+                    }
+                    adapter.notifyDataSetChanged();
                 }
-                adapter.notifyDataSetChanged();
             }
         }
 
         @Override
-        public void onCancelled(@NonNull DatabaseError error) {
-
-        }
+        public void onCancelled(@NonNull DatabaseError error) {}
     };
 }

@@ -16,17 +16,38 @@
 
 
             <TextView
-                android:id="@+id/text_view_month"
+                android:id="@+id/Age_Group"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Age: 27"
+                android:text=""
                 android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium" />
 
             <TextView
-                android:id="@+id/text_view_year"
+                android:id="@+id/Classification_Reported"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Country: India"
+                android:text=""
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium" />
+
+            <TextView
+                android:id="@+id/HA"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium" />
+
+            <TextView
+                android:id="@+id/Reported_Date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium" />
+
+            <TextView
+                android:id="@+id/Sex"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=""
                 android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium" />
 
 

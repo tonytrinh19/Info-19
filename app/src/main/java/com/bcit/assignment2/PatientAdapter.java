@@ -31,8 +31,12 @@ public class PatientAdapter extends RecyclerView.Adapter<PatientAdapter.PatientV
     @Override
     public void onBindViewHolder(@NonNull PatientViewHolder holder, int position) {
         Patient Patient = PatientList.get(position);
-        holder.textViewYear.setText(Patient.reportedDate);
-        holder.textViewMonth.setText(Patient.reportedDate);
+
+        holder.textViewAge_Group.setText("Age Group: " + Patient.ageGroup);
+        holder.textViewClassification_Reported.setText("Classification: " + Patient.classificationReported);
+        holder.textViewHA.setText("Health Authority: " + Patient.healthAuthority);
+        holder.textViewReported_Date.setText("Reported Date: " + Patient.reportedDate);
+        holder.textViewSex.setText("Sex: " + Patient.sex);
     }
 
     @Override
@@ -42,13 +46,17 @@ public class PatientAdapter extends RecyclerView.Adapter<PatientAdapter.PatientV
 
     class PatientViewHolder extends RecyclerView.ViewHolder {
 
-        TextView textViewYear, textViewMonth;
+        TextView textViewAge_Group, textViewClassification_Reported,
+                textViewHA, textViewReported_Date, textViewSex;
 
         public PatientViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            textViewYear = itemView.findViewById(R.id.text_view_year);
-            textViewMonth = itemView.findViewById(R.id.text_view_month);
+            textViewAge_Group = itemView.findViewById(R.id.Age_Group);
+            textViewClassification_Reported= itemView.findViewById(R.id.Classification_Reported);
+            textViewHA = itemView.findViewById(R.id.HA);
+            textViewReported_Date = itemView.findViewById(R.id.Reported_Date);
+            textViewSex = itemView.findViewById(R.id.Sex);
         }
     }
 }
