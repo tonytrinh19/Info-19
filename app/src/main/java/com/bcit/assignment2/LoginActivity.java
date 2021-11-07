@@ -14,12 +14,6 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.android.volley.Request;
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.JsonArrayRequest;
-import com.android.volley.toolbox.Volley;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -27,7 +21,6 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.gson.Gson;
 
 import org.json.JSONArray;
 
@@ -45,7 +38,6 @@ public class LoginActivity extends AppCompatActivity {
     FirebaseAuth fAuth;
 
     private ArrayList<Patient> _patientList;
-    private RequestQueue _requestQueue;
     private DatabaseReference mDatabase;
 
 
@@ -113,29 +105,29 @@ public class LoginActivity extends AppCompatActivity {
         _patientList = new ArrayList<Patient>();
 
         // Get the db ref
-        mDatabase = FirebaseDatabase.getInstance().getReference();
+//        mDatabase = FirebaseDatabase.getInstance().getReference();
 
-        mDatabase.get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
-            @Override
-            public void onComplete(@NonNull Task<DataSnapshot> task) {
-                if (!task.isSuccessful()) {
-                    Log.e("firebase", "Error getting data", task.getException());
-                } else {
-                    System.out.println("Hey ma im here");
-                    for (DataSnapshot currentItem : task.getResult().getChildren()) {
-                        System.out.print(currentItem);
-                        Patient newPatient = new Patient(currentItem.child("Age_Group").getValue(String.class),
-                                currentItem.child("Classification_Reported").getValue(String.class),
-                                currentItem.child("HA").getValue(String.class),
-                                currentItem.child("Reported_Date").getValue(String.class),
-                                currentItem.child("Sex").getValue(String.class));
-                        _patientList.add(newPatient);
-                    }
-                    System.out.println(_patientList);
-//                    Log.d("firebase", String.valueOf(task.getResult().getValue()));
-                }
-            }
-        });
+//        mDatabase.get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+//            @Override
+//            public void onComplete(@NonNull Task<DataSnapshot> task) {
+//                if (!task.isSuccessful()) {
+//                    Log.e("firebase", "Error getting data", task.getException());
+//                } else {
+//                    System.out.println("Hey ma im here");
+//                    for (DataSnapshot currentItem : task.getResult().getChildren()) {
+//                        System.out.print(currentItem);
+//                        Patient newPatient = new Patient(currentItem.child("Age_Group").getValue(String.class),
+//                                currentItem.child("Classification_Reported").getValue(String.class),
+//                                currentItem.child("HA").getValue(String.class),
+//                                currentItem.child("Reported_Date").getValue(String.class),
+//                                currentItem.child("Sex").getValue(String.class));
+//                        _patientList.add(newPatient);
+//                    }
+//                    System.out.println(_patientList);
+////                    Log.d("firebase", String.valueOf(task.getResult().getValue()));
+//                }
+//            }
+//        });
     }
 
 }

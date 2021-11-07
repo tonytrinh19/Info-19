@@ -2,66 +2,58 @@ package com.bcit.assignment2;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.widget.Button;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 import java.util.Objects;
 
-public class HomePageActivity extends AppCompatActivity {
+public class CasesMonthYear extends AppCompatActivity {
 
-    int maleCount;
-    int femaleCount;
-    int unknown;
+    PatientAdapter adapter;
+    RecyclerView rv;
+    List<Patient> patientList;
+
+    int maleCount = 0;
+    int femaleCount = 0;
+    int unknown = 0;
+
+    DatabaseReference dbArtists;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home_page);
+        setContentView(R.layout.activity_cases_month_year);
 
-        Button monthYear = findViewById(R.id.mon_year_but);
-        Button healthAuthority = findViewById(R.id.health_auth_button);
-        Button gender = findViewById(R.id.gender_button);
-        Button ageGroup = findViewById(R.id.age_group_button);
 
-        monthYear.setOnClickListener(myv -> {
-            Intent monthIntent = new Intent(this, CasesMonthYear.class);
-//            monthIntent.putStringArrayListExtra("db_result")
-            startActivity(monthIntent);
-        });
+        rv = findViewById(R.id.recyclerView);
+        rv.setHasFixedSize(true);
+        rv.setLayoutManager(new LinearLayoutManager(this));
+        patientList = new ArrayList<>();
+        adapter = new PatientAdapter(this, patientList);
+        rv.setAdapter(adapter);
 
-        healthAuthority.setOnClickListener(hav -> {
-            Intent healthAuthIntent = new Intent(this, CasesHealthAuthority.class);
-//            monthIntent.putStringArrayListExtra("db_result")
-            startActivity(healthAuthIntent);
-        });
-
-        gender.setOnClickListener(myv -> {
-            Intent genderIntent = new Intent(this, CasesGender.class);
-//            monthIntent.putStringArrayListExtra("db_result")
-            startActivity(genderIntent);
-        });
-
-        ageGroup.setOnClickListener(myv -> {
-            Intent ageIntent = new Intent(this, CasesAgeGroup.class);
-//            monthIntent.putStringArrayListExtra("db_result")
-            startActivity(ageIntent);
-        });
-
+        // 150k max ?
         Query q = FirebaseDatabase.getInstance().getReference();
+
         q.addListenerForSingleValueEvent(valueEventListener);
     }
 
     ValueEventListener valueEventListener = new ValueEventListener() {
         @Override
         public void onDataChange(DataSnapshot dataSnapshot) {
+            patientList.clear();
             if (dataSnapshot.exists()) {
                 for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
 
@@ -80,6 +72,7 @@ public class HomePageActivity extends AppCompatActivity {
 //                    snapshot.child("Sex").toString();
 //                    patientList.add(p);
                 }
+                adapter.notifyDataSetChanged();
             }
         }
 
