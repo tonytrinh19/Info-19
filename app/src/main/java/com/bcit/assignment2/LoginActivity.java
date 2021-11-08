@@ -37,10 +37,6 @@ public class LoginActivity extends AppCompatActivity {
 
     FirebaseAuth fAuth;
 
-    private ArrayList<Patient> _patientList;
-    private DatabaseReference mDatabase;
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -100,34 +96,6 @@ public class LoginActivity extends AppCompatActivity {
                 startActivity(new Intent(getApplicationContext(), RegisterActivity.class));
             }
         });
-
-
-        _patientList = new ArrayList<Patient>();
-
-        // Get the db ref
-//        mDatabase = FirebaseDatabase.getInstance().getReference();
-
-//        mDatabase.get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
-//            @Override
-//            public void onComplete(@NonNull Task<DataSnapshot> task) {
-//                if (!task.isSuccessful()) {
-//                    Log.e("firebase", "Error getting data", task.getException());
-//                } else {
-//                    System.out.println("Hey ma im here");
-//                    for (DataSnapshot currentItem : task.getResult().getChildren()) {
-//                        System.out.print(currentItem);
-//                        Patient newPatient = new Patient(currentItem.child("Age_Group").getValue(String.class),
-//                                currentItem.child("Classification_Reported").getValue(String.class),
-//                                currentItem.child("HA").getValue(String.class),
-//                                currentItem.child("Reported_Date").getValue(String.class),
-//                                currentItem.child("Sex").getValue(String.class));
-//                        _patientList.add(newPatient);
-//                    }
-//                    System.out.println(_patientList);
-////                    Log.d("firebase", String.valueOf(task.getResult().getValue()));
-//                }
-//            }
-//        });
     }
 
 }

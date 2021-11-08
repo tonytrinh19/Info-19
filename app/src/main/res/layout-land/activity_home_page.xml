@@ -12,14 +12,19 @@
         android:id="@+id/ton_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/ton_name" />
+        android:text="@string/ton_name"
+        android:textAlignment="center"
+        android:textSize="@dimen/larger_text_size"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/jor_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/jor_name"
-        />
+        android:textAlignment="center"
+        android:textSize="@dimen/larger_text_size"
+        android:textStyle="bold" />
 
     <Button
         android:id="@+id/mon_year_but"

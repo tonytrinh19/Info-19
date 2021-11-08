@@ -36,10 +36,11 @@ public class CasesMonthYear extends AppCompatActivity {
         Button findButton = findViewById(R.id.searchYearMonth);
         findButton.setOnClickListener(v -> {
             TextView monthView = findViewById(R.id.monthSearch);
-            TextView yearView = findViewById(R.id.yearSearch);
-            year = yearView.getText().toString();
-            month = monthView.getText().toString();
+            TextView yearView  = findViewById(R.id.yearSearch);
+            year               = yearView.getText().toString();
+            month              = monthView.getText().toString();
 
+            // Query the database to count required fields.
             Query q = FirebaseDatabase.getInstance().getReference().limitToFirst(10000);
             q.addListenerForSingleValueEvent(valueEventListener);
         });
@@ -50,8 +51,6 @@ public class CasesMonthYear extends AppCompatActivity {
         patientList = new ArrayList<>();
         adapter = new PatientAdapter(this, patientList);
         rv.setAdapter(adapter);
-
-
     }
 
     ValueEventListener valueEventListener = new ValueEventListener() {

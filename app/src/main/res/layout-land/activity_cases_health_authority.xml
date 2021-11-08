@@ -15,9 +15,9 @@
         android:layout_marginTop="18dp"
         android:layout_marginEnd="13dp"
         android:text="@string/cases_by_health_authority"
-        android:textSize="25sp"
         android:textAlignment="center"
-        />
+        android:textSize="25sp"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/Fraser"

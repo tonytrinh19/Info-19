@@ -11,11 +11,13 @@
         android:id="@+id/tvApp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:textSize="25sp"
         android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        android:text="@string/create_new_account"
+        android:textAlignment="center"
         android:textColor="@android:color/holo_purple"
-        android:text="@string/create_new_account" />
+        android:textSize="@dimen/header_text_size"
+        android:textStyle="bold" />
 
     <EditText
         android:id="@+id/editEmail"
@@ -41,12 +43,14 @@
 
         <Button
             android:id="@+id/btnRegister"
-            android:layout_weight="2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="30dp"
+            android:layout_weight="2"
+            android:text="@string/register"
+            android:textAlignment="center"
             android:textAllCaps="false"
-            android:text="@string/register" />
+            android:textSize="@dimen/reg_text_size" />
 
         <TextView
             android:id="@+id/tvLogin"
@@ -55,7 +59,9 @@
             android:layout_marginLeft="30dp"
             android:layout_weight="2"
             android:text="@string/login"
-            android:textColor="@color/teal_700" />
+            android:textAlignment="center"
+            android:textColor="@color/teal_700"
+            android:textSize="@dimen/reg_text_size" />
     </LinearLayout>
 
 

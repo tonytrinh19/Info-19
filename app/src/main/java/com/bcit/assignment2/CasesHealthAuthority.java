@@ -40,19 +40,19 @@ public class CasesHealthAuthority extends AppCompatActivity {
         Vancouver = intent.getStringExtra(  "Vancouver");
         Coastal =   intent.getStringExtra(    "Coastal");
 
-        fraserCases = findViewById(R.id     .Fraser);
-        interiorCases = findViewById(R.id   .Interior);
-        northernCases = findViewById(R.id   .Northern);
-        canadaCases = findViewById(R.id     .Canada);
+        fraserCases    = findViewById(R.id     .Fraser);
+        interiorCases  = findViewById(R.id   .Interior);
+        northernCases  = findViewById(R.id   .Northern);
+        canadaCases    = findViewById(R.id     .Canada);
         vancouverCases = findViewById(R.id  .Vancouver);
-        coastalCases = findViewById(R.id    .Coastal);
+        coastalCases   = findViewById(R.id    .Coastal);
 
-        fraserCases.setText(Fraser);
-        interiorCases.setText(Interior);
-        northernCases.setText(Northern);
-        canadaCases.setText(Canada);
+        fraserCases.   setText(Fraser);
+        interiorCases. setText(Interior);
+        northernCases. setText(Northern);
+        canadaCases.   setText(Canada);
         vancouverCases.setText(Vancouver);
-        coastalCases.setText(Coastal);
+        coastalCases.  setText(Coastal);
 
 
     }

@@ -1,5 +1,7 @@
 package com.bcit.assignment2;
 
+// Ended up not needing to parse data, might remove later.
+
 public class Patient {
     String ageGroup;
     String classificationReported;
