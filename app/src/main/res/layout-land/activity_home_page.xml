@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".HomePageActivity">
+
+    <TextView
+        android:id="@+id/ton_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/ton_name" />
+
+    <TextView
+        android:id="@+id/jor_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/jor_name"
+        />
+
+    <Button
+        android:id="@+id/mon_year_but"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/month_year_button_label"
+        android:visibility="gone"
+        />
+
+    <Button
+        android:id="@+id/health_auth_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/health_button_label"
+        android:visibility="gone"
+        />
+
+    <Button
+        android:id="@+id/gender_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/gender_button_label"
+        android:visibility="gone"
+        />
+
+    <Button
+        android:id="@+id/age_group_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/age_button_label"
+        android:visibility="gone"
+        />
+
+    <ProgressBar
+        android:layout_marginTop="50dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/progress_bar"
+        android:layout_gravity="center_vertical|center_horizontal"
+        />
+</LinearLayout>
+
+

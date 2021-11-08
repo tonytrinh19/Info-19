@@ -90,7 +90,7 @@ public class RegisterActivity extends AppCompatActivity {
         fAuth = FirebaseAuth.getInstance();
 
         if (fAuth.getCurrentUser() != null) {
-            startActivity(new Intent(getApplicationContext(), MainLoginActivity.class));
+            startActivity(new Intent(getApplicationContext(), HomePageActivity.class));
             finish();
         }
 

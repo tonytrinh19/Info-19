@@ -3,11 +3,25 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/Home/OneDrive/Documents/Local/School/CST/Term 3/Android Development/code/asn2-covid/app/src/main/res/layout/activity_cases_age_group.xml" value="0.264" />
-        <entry key="..\:/Users/Home/OneDrive/Documents/Local/School/CST/Term 3/Android Development/code/asn2-covid/app/src/main/res/layout/activity_cases_gender.xml" value="0.4" />
-        <entry key="..\:/Users/Home/OneDrive/Documents/Local/School/CST/Term 3/Android Development/code/asn2-covid/app/src/main/res/layout/activity_cases_health_authority.xml" value="0.264" />
+        <entry key="..\:/BCIT/Assignment/asn2-covid/app/src/main/res/layout-land/activity_cases_age_group.xml" value="0.20260416666666667" />
+        <entry key="..\:/BCIT/Assignment/asn2-covid/app/src/main/res/layout-land/activity_cases_gender.xml" value="0.20260416666666667" />
+        <entry key="..\:/BCIT/Assignment/asn2-covid/app/src/main/res/layout-land/activity_cases_health_authority.xml" value="0.20260416666666667" />
+        <entry key="..\:/BCIT/Assignment/asn2-covid/app/src/main/res/layout-land/activity_cases_month_year.xml" value="0.20260416666666667" />
+        <entry key="..\:/BCIT/Assignment/asn2-covid/app/src/main/res/layout-land/activity_home_page.xml" value="0.290625" />
+        <entry key="..\:/BCIT/Assignment/asn2-covid/app/src/main/res/layout-land/activity_login.xml" value="0.2786458333333333" />
+        <entry key="..\:/BCIT/Assignment/asn2-covid/app/src/main/res/layout-land/activity_register.xml" value="0.2786458333333333" />
+        <entry key="..\:/BCIT/Assignment/asn2-covid/app/src/main/res/layout/activity_cases_age_group.xml" value="0.36018518518518516" />
+        <entry key="..\:/BCIT/Assignment/asn2-covid/app/src/main/res/layout/activity_cases_gender.xml" value="0.36018518518518516" />
+        <entry key="..\:/BCIT/Assignment/asn2-covid/app/src/main/res/layout/activity_cases_health_authority.xml" value="0.36018518518518516" />
+        <entry key="..\:/BCIT/Assignment/asn2-covid/app/src/main/res/layout/activity_cases_month_year.xml" value="0.36018518518518516" />
+        <entry key="..\:/BCIT/Assignment/asn2-covid/app/src/main/res/layout/activity_home_page.xml" value="0.228125" />
+        <entry key="..\:/BCIT/Assignment/asn2-covid/app/src/main/res/layout/activity_login.xml" value="0.36018518518518516" />
+        <entry key="..\:/BCIT/Assignment/asn2-covid/app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="..\:/BCIT/Assignment/asn2-covid/app/src/main/res/layout/activity_register.xml" value="0.37135416666666665" />
+        <entry key="..\:/Users/Home/OneDrive/Documents/Local/School/CST/Term 3/Android Development/code/asn2-covid/app/src/main/res/layout/activity_cases_age_group.xml" value="0.1" />
+        <entry key="..\:/Users/Home/OneDrive/Documents/Local/School/CST/Term 3/Android Development/code/asn2-covid/app/src/main/res/layout/activity_cases_gender.xml" value="0.1" />
+        <entry key="..\:/Users/Home/OneDrive/Documents/Local/School/CST/Term 3/Android Development/code/asn2-covid/app/src/main/res/layout/activity_cases_health_authority.xml" value="0.1" />
         <entry key="..\:/Users/Home/OneDrive/Documents/Local/School/CST/Term 3/Android Development/code/asn2-covid/app/src/main/res/layout/activity_cases_month_year.xml" value="0.4" />
-        <entry key="..\:/Users/Home/OneDrive/Documents/Local/School/CST/Term 3/Android Development/code/asn2-covid/app/src/main/res/layout/activity_home_page.xml" value="0.4" />
         <entry key="..\:/Users/Home/OneDrive/Documents/Local/School/CST/Term 3/Android Development/code/asn2-covid/app/src/main/res/layout/activity_main.xml" value="0.264" />
         <entry key="..\:/Users/Home/OneDrive/Documents/Local/School/CST/Term 3/Android Development/code/asn2-covid/app/src/main/res/layout/activity_register.xml" value="0.1" />
         <entry key="..\:/Users/Home/OneDrive/Documents/Local/School/CST/Term 3/Android Development/code/asn2-covid/app/src/main/res/layout/content_cases_gender.xml" value="0.1" />

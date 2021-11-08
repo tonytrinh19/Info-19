@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CasesHealthAuthority"
+    android:orientation="vertical"
+    >
+
+    <TextView
+        android:layout_width="397dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:layout_marginEnd="13dp"
+        android:text="@string/cases_by_health_authority"
+        android:textSize="25sp"
+        android:textAlignment="center"
+        />
+
+    <TextView
+        android:id="@+id/Fraser"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:layout_margin="10dp"
+        />
+    <TextView
+        android:id="@+id/Interior"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:layout_margin="10dp"
+        />
+    <TextView
+        android:id="@+id/Northern"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:layout_margin="10dp"
+        />
+    <TextView
+        android:id="@+id/Canada"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:layout_margin="10dp"
+        />
+    <TextView
+        android:id="@+id/Vancouver"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:layout_margin="10dp"
+        />
+    <TextView
+        android:id="@+id/Coastal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:layout_margin="10dp"
+        />
+</LinearLayout>
+
+
+
+
+
+
