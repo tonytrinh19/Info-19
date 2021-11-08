@@ -66,4 +66,8 @@
 
     <string name="male">      Fraser: %1$s</string>
     <string name="female">    Interior: %1$s</string>
+    <string name="cases_by_month_year">CASES BY MONTH/YEAR</string>
+    <string name="cases_by_gender">CASES BY GENDER</string>
+    <string name="cases_by_health_authority">CASES BY HEALTH AUTHORITY</string>
+    <string name="cases_by_age_group">CASES BY AGE GROUP</string>
 </resources>

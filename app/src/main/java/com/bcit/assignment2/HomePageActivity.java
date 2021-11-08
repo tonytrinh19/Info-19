@@ -56,36 +56,36 @@ public class HomePageActivity extends AppCompatActivity {
 
         healthAuthority.setOnClickListener(hav -> {
             Intent healthAuthIntent = new Intent(this, CasesHealthAuthority.class);
-            healthAuthIntent.putExtra(   "Fraser", "Fraser:\t" +   countFraserHA          );
-            healthAuthIntent.putExtra( "Interior", "Interior:\t" + countInteriorHA        );
-            healthAuthIntent.putExtra( "Northern", "Northern:\t" + countNorthernHA        );
-            healthAuthIntent.putExtra(   "Canada", "Canada:\t" +   countOutsideCa         );
-            healthAuthIntent.putExtra("Vancouver", "Vancouver:\t" + countVancouverCoastalHA);
-            healthAuthIntent.putExtra(  "Coastal", "Coastal:\t" + countVancouverIslandHA );
+            healthAuthIntent.putExtra(   "Fraser","Fraser:\t" +   countFraserHA          );
+            healthAuthIntent.putExtra( "Interior","Interior:\t" + countInteriorHA        );
+            healthAuthIntent.putExtra( "Northern","Northern:\t" + countNorthernHA        );
+            healthAuthIntent.putExtra(   "Canada","Canada:\t" +   countOutsideCa         );
+            healthAuthIntent.putExtra("Vancouver","Vancouver:\t" + countVancouverCoastalHA);
+            healthAuthIntent.putExtra(  "Coastal","Coastal:\t" + countVancouverIslandHA );
             startActivity(healthAuthIntent);
         });
 
         gender.setOnClickListener(gv -> {
             Intent genderIntent = new Intent(this, CasesGender.class);
-            genderIntent.putExtra(     "male",  "male:\t" + maleCount  );
-            genderIntent.putExtra(   "female",  "female:\t" + femaleCount);
-            genderIntent.putExtra(  "unknown",  "unknown:\t" + unknown    );
+            genderIntent.putExtra(   "male","male:\t" + maleCount  );
+            genderIntent.putExtra( "female","female:\t" + femaleCount);
+            genderIntent.putExtra("unknown","unknown:\t" + unknown    );
             startActivity(genderIntent);
         });
 
         ageGroup.setOnClickListener(agv -> {
             Intent ageIntent = new Intent(this, CasesAgeGroup.class);
-            ageIntent.putExtra("lessThan10" ,   "lessThan10:\t" + ageLessThan10Count);
-            ageIntent.putExtra("to19"       ,   "to19:\t" + age10To19Count);
-            ageIntent.putExtra("to29"       ,   "to29:\t" + age20To29Count);
-            ageIntent.putExtra("to39"       ,   "to39:\t" + age30To39Count);
-            ageIntent.putExtra("to49"       ,   "to49:\t" + age40To49Count);
-            ageIntent.putExtra("to59"       ,   "to59:\t" + age50To59Count);
-            ageIntent.putExtra("to69"       ,   "to69:\t" + age60To69Count);
-            ageIntent.putExtra("to79"       ,   "to79:\t" + age70To79Count);
-            ageIntent.putExtra("to89"       ,   "to89:\t" + age80To89Count);
-            ageIntent.putExtra("plus90"     ,   "plus90:\t" + ageMoreThan90);
-            ageIntent.putExtra("unknown"    ,   "unknown:\t" + ageElse);
+            ageIntent.putExtra("lessThan10","Less than 10:\t\t"  + ageLessThan10Count);
+            ageIntent.putExtra("to19"        ,"10 to 19:\t\t"    + age10To19Count);
+            ageIntent.putExtra("to29"        ,"19 to 29:\t\t"    + age20To29Count);
+            ageIntent.putExtra("to39"        ,"29 to 39:\t\t"    + age30To39Count);
+            ageIntent.putExtra("to49"        ,"39 to 49:\t\t"    + age40To49Count);
+            ageIntent.putExtra("to59"        ,"49 to 59:\t\t"    + age50To59Count);
+            ageIntent.putExtra("to69"        ,"59 to 69:\t\t"    + age60To69Count);
+            ageIntent.putExtra("to79"        ,"69 to 79:\t\t"    + age70To79Count);
+            ageIntent.putExtra("to89"        ,"79 to 89:\t\t"    + age80To89Count);
+            ageIntent.putExtra("plus90"      ,"+90:\t\t"         + ageMoreThan90);
+            ageIntent.putExtra("unknown"     ,"unknown:\t\t"     + ageElse);
             startActivity(ageIntent);
         });
     }
