@@ -37,54 +37,42 @@ public class RegisterActivity extends AppCompatActivity {
         tvLogin = findViewById(R.id.tvLogin);
         progressBar = findViewById(R.id.progressBar);
 
-        btnRegister.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+        btnRegister.setOnClickListener(view -> {
 
-                String email = editEmail.getText().toString().trim();
-                String password = editPassword.getText().toString().trim();
+            String email = editEmail.getText().toString().trim();
+            String password = editPassword.getText().toString().trim();
 
-                if (TextUtils.isEmpty(email)) {
-                    editEmail.setError("Email is required");
-                    return;
-                }
-
-                if (TextUtils.isEmpty(password)) {
-                    editEmail.setError("Password is required");
-                    return;
-                }
-
-                if (password.length() <6) {
-                    editEmail.setError("Password must be >= 6 characters.");
-                    return;
-                }
-
-                progressBar.setVisibility(View.VISIBLE);
-
-                // register user
-                fAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()) {
-                            Toast.makeText(RegisterActivity.this, "User Created", Toast.LENGTH_LONG).show();
-                            startActivity(new Intent(getApplicationContext(), HomePageActivity.class));
-                        } else {
-                            Toast.makeText(RegisterActivity.this, "ERROR: " + task.getException().getMessage(), Toast.LENGTH_LONG).show();
-                            progressBar.setVisibility(View.GONE);
-                        }
-                    }
-                });
-
+            if (TextUtils.isEmpty(email)) {
+                editEmail.setError("Email is required");
+                return;
             }
+
+            if (TextUtils.isEmpty(password)) {
+                editEmail.setError("Password is required");
+                return;
+            }
+
+            if (password.length() <6) {
+                editEmail.setError("Password must be >= 6 characters.");
+                return;
+            }
+
+            progressBar.setVisibility(View.VISIBLE);
+
+            // register user
+            fAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(task -> {
+                if (task.isSuccessful()) {
+                    Toast.makeText(RegisterActivity.this, "User Created", Toast.LENGTH_LONG).show();
+                    startActivity(new Intent(getApplicationContext(), HomePageActivity.class));
+                } else {
+                    Toast.makeText(RegisterActivity.this, "ERROR: " + task.getException().getMessage(), Toast.LENGTH_LONG).show();
+                    progressBar.setVisibility(View.GONE);
+                }
+            });
 
         });
 
-        tvLogin.setOnClickListener(new View.OnClickListener() {
-        @Override
-            public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), LoginActivity.class));
-            }
-        });
+        tvLogin.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), LoginActivity.class)));
 
 
         fAuth = FirebaseAuth.getInstance();

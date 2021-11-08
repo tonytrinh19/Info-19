@@ -29,8 +29,7 @@ import java.util.Iterator;
 
 public class LoginActivity extends AppCompatActivity {
 
-    EditText editEmail;
-    EditText editPassword;
+    EditText editEmail, editPassword;
     ProgressBar progressBar;
     Button btnLogin;
     TextView tvCreateNewAccount;
@@ -42,60 +41,49 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        editEmail = findViewById(R.id.editEmail);
+        editEmail    = findViewById(R.id.editEmail);
         editPassword = findViewById(R.id.editPassword);
-        progressBar = findViewById(R.id.progressBar);
+        progressBar   = findViewById(R.id.progressBar);
         btnLogin = findViewById(R.id.btnLogin);
         tvCreateNewAccount = findViewById(R.id.tvCreateNewAccount);
 
         fAuth = FirebaseAuth.getInstance();
 
-        btnLogin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String email = editEmail.getText().toString().trim();
-                String password = editPassword.getText().toString().trim();
+        btnLogin.setOnClickListener(view -> {
+            String email = editEmail.getText().toString().trim();
+            String password = editPassword.getText().toString().trim();
 
-                if (TextUtils.isEmpty(email)) {
-                    editEmail.setError("Email is required");
-                    return;
-                }
-
-                if (TextUtils.isEmpty(password)) {
-                    editEmail.setError("Password is required");
-                    return;
-                }
-
-                if (password.length() < 6) {
-                    editEmail.setError("Password must be >= 6 characters.");
-                    return;
-                }
-
-                progressBar.setVisibility(View.VISIBLE);
-
-                //authenticate user
-                fAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()) {
-                            Toast.makeText(LoginActivity.this, "Login successful!", Toast.LENGTH_LONG).show();
-                            startActivity(new Intent(getApplicationContext(), HomePageActivity.class));
-                        } else {
-                            Toast.makeText(LoginActivity.this, "ERROR: " + task.getException().getMessage(), Toast.LENGTH_LONG).show();
-                            progressBar.setVisibility(View.GONE);
-                        }
-                    }
-                });
-
+            if (TextUtils.isEmpty(email)) {
+                editEmail.setError("Email is required");
+                return;
             }
+
+            if (TextUtils.isEmpty(password)) {
+                editEmail.setError("Password is required");
+                return;
+            }
+
+            if (password.length() < 6) {
+                editEmail.setError("Password must be >= 6 characters.");
+                return;
+            }
+
+            progressBar.setVisibility(View.VISIBLE);
+
+            //authenticate user
+            fAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(task -> {
+                if (task.isSuccessful()) {
+                    Toast.makeText(LoginActivity.this, "Login successful!", Toast.LENGTH_LONG).show();
+                    startActivity(new Intent(getApplicationContext(), HomePageActivity.class));
+                } else {
+                    Toast.makeText(LoginActivity.this, "ERROR: " + task.getException().getMessage(), Toast.LENGTH_LONG).show();
+                    progressBar.setVisibility(View.GONE);
+                }
+            });
+
         });
 
-        tvCreateNewAccount.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), RegisterActivity.class));
-            }
-        });
+        tvCreateNewAccount.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), RegisterActivity.class)));
     }
 
 }
