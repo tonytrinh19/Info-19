@@ -108,7 +108,6 @@ public class HomePageActivity extends AppCompatActivity {
                 pb.setVisibility(View.GONE);
             }
         }
-
         @Override
         public void onCancelled(@NonNull DatabaseError error) {}
     };
