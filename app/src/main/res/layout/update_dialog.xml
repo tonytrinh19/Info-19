@@ -1,21 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
 
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-
-    xmlns:tools="http://schemas.android.com/tools"
-
-    android:layout_width="match_parent"
-
-    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
 
     android:orientation="vertical"
 
-    tools:context=".MainLoginActivity">
+    android:layout_width="match_parent"
+
+    android:layout_height="match_parent">
 
 
     <EditText
+
         android:id="@+id/editTextFirstName"
 
         android:layout_width="match_parent"
@@ -37,6 +34,8 @@
 
         android:layout_height="wrap_content"
 
+        android:ems="10"
+
         android:hint="@string/hintLastName"
 
         android:inputType="textPersonName" />
@@ -55,22 +54,23 @@
 
     <Button
 
-        android:id="@+id/buttonAddStudent"
+        android:id="@+id/btnUpdate"
 
         android:layout_width="match_parent"
 
         android:layout_height="wrap_content"
 
-        android:text="@string/btnAddStudent" />
+        android:text="@string/btnUpdate" />
 
-    <ListView
+    <Button
 
-        android:id="@+id/lvStudents"
+        android:id="@+id/btnDelete"
 
         android:layout_width="match_parent"
 
+        android:layout_height="wrap_content"
 
-    android:layout_height="match_parent" />
+    android:text="@string/btnDelete" />
 
 
 </LinearLayout>

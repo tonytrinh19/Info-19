@@ -1,3 +1,73 @@
 <resources>
     <string name="app_name">assignment2</string>
+    <string name="hintFirstName">First Name</string>
+
+    <string name="hintLastName">Last Name</string>
+
+    <string name="btnAddStudent">Add Student</string>
+
+    <string name="enterNewName">Enter New Name</string>
+
+    <string name="btnUpdate">Update</string>
+
+    <string name="btnDelete">Delete</string>
+
+
+    <string-array name="schools">
+
+        <item>Business</item>
+
+        <item>Computing</item>
+
+        <item>Energy</item>
+
+        <item>Mining</item>
+
+        <item>Nursing</item>
+
+    </string-array>
+    <string name="auth_app_name">Firebase authentication demo</string>
+
+    <string name="calculator_title">Tip Calculator</string>
+
+    <string name="bill_amount_label">Bill Amount</string>
+
+    <string name="tip_percent_label">Percent</string>
+    <string name="tip_percent">15%</string>
+    <string name="increase">+</string>
+    <string name="decrease">-</string>
+
+    <string name="tip_amount_label">Tip</string>
+    <string name="tip_amount">$0.00</string>
+
+    <string name="total_amount_label">Total</string>
+    <string name="total_amount">$0.00</string>
+
+    <string name="login">Login</string>
+    <string name="register">Register</string>
+    <string name="logout">Logout</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="login_title">LOGIN</string>
+    <string name="create_new_account">Create new account</string>
+    <string name="jor_name">Jordan Godau (A00954606)</string>
+    <string name="ton_name">Toni Trinh (A01241898)</string>
+    <string name="bill_amount">Bill Amount</string>
+    <string name="month_year_button_label">Cases by month and year</string>
+    <string name="health_button_label">cases by health authority</string>
+    <string name="gender_button_label">cases by gender</string>
+    <string name="age_button_label">cases by age group</string>
+
+    <string name="unknown">   unknown: %1$s</string>
+
+    <string name="month">   month</string>
+    <string name="year">    year</string>
+    <string name="find">    Find</string>
+
+    <string name="male">      Fraser: %1$s</string>
+    <string name="female">    Interior: %1$s</string>
+    <string name="cases_by_month_year">CASES BY MONTH/YEAR</string>
+    <string name="cases_by_gender">CASES BY GENDER</string>
+    <string name="cases_by_health_authority">CASES BY HEALTH AUTHORITY</string>
+    <string name="cases_by_age_group">CASES BY AGE GROUP</string>
 </resources>
